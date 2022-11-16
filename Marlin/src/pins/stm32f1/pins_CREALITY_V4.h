@@ -246,6 +246,7 @@
 
   #ifndef BEEPER_PIN
     #define BEEPER_PIN               EXP1_06_PIN
+    #undef SPEAKER
   #endif
 
 #endif

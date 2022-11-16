@@ -667,11 +667,16 @@
     #define DEFAULT_Kd_LIST {  78.81,  78.81 }
   #else
     // Ender 3 v2
-    #define DEFAULT_Kp   35.14
-    #define DEFAULT_Ki    2.58
-    #define DEFAULT_Kd  119.46
+    // Recv: echo:; Hotend PID:
+    // Recv: echo:  M301 P31.78 I2.21 D114.42
+    // Recv: echo:; Hotend PID:
+    // Recv: echo:  M301 P25.92 I1.61 D104.20
+    #define DEFAULT_Kp   25.92
+    #define DEFAULT_Ki    1.61
+    #define DEFAULT_Kd  104.20
   #endif
 #endif
+
 
 /**
  * Model Predictive Control for hotend
@@ -750,10 +755,14 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Print Bed PID debug data to the serial port.
 
-  // Ender 3 V2
-  #define DEFAULT_bedKp 156.87
-  #define DEFAULT_bedKi  30.64
-  #define DEFAULT_bedKd 535.46
+  // Ender 3 V2  
+  // Recv: echo:; Bed PID:
+  // Recv: echo:  M304 P130.88 I25.56 D446.74
+  // Recv: echo:; Bed PID:
+  // Recv: echo:  M304 P162.74 I31.79 D555.48
+  #define DEFAULT_bedKp 162.74
+  #define DEFAULT_bedKi  31.79
+  #define DEFAULT_bedKd 555.48
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -2242,7 +2251,7 @@
 #define PREHEAT_1_FAN_SPEED   128 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"
-#define PREHEAT_2_TEMP_HOTEND 220
+#define PREHEAT_2_TEMP_HOTEND 240
 #define PREHEAT_2_TEMP_BED     75
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED   128 // Value from 0 to 255
@@ -2580,7 +2589,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-//#define SPEAKER
+#define SPEAKER
 
 //
 // The duration and frequency for the UI feedback sound.
